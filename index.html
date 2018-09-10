@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ninja Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<style>
+#background {
+    background-color: rgb(183, 223, 223);
+    height:430px;
+    width:500px;
+}
+
+</style>
+
+</head>
+<body>
+    <div id='background' style>
+        <div id='character' style='position: absolute; top:50px; left:225px; background-image: url("img/down1.png"); width: 59px; height:86px;'></div>
+
+    </div>
+</body>
+
+<script>
+
+var leftValue = 225;
+var topValue = 50;
+
+function update(){
+    document.getElementById("character").style.left = leftValue+"px";
+    document.getElementById("character").style.top = topValue+"px";
+}
+document.onkeydown = function(e){
+    console.log(e);
+if(e.keyCode == 37 && leftValue > 0) {//LEFT
+    leftValue-=10;
+} else if(e.keyCode == 39 && leftValue < 450){//RIGHT
+    leftValue +=10;
+} else if(e.keyCode == 40 && topValue < 350){//DOWN
+    topValue +=10; 
+} else if(e.keyCode == 38 && topValue > 0){//UP
+    topValue -=10;
+ }
+ update();
+}
+
+
+
+</script>
+</html>
